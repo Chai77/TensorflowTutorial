@@ -4,6 +4,12 @@ import keras
 mnist = keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
+# Cast to np.float32
+x_train = x_train.astype(np.float32)
+y_train = y_train.astype(np.float32)
+x_test = x_test.astype(np.float32)
+y_test = y_test.astype(np.float32)
+
 x_train = keras.utils.normalize(x_train, axis=1)
 x_test = keras.utils.normalize(x_test, axis=1)
 
